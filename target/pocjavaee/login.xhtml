@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html 
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+		<title>Sistema de Doação</title>
+        <meta name="weverson" content="The Author"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        
+        <link rel="stylesheet" href="resources/css/site.css"/>
+
+    </h:head>
+	<body style="min-height: 100%;">
+	
+		<b:navBar brand="SIDS" brandHref="index.xhtml" >
+            <b:navbarLinks>
+                
+            </b:navbarLinks>
+            
+        </b:navBar>
+        <b:container>
+     	<h:form>
+     		<b:panel>
+     		
+     			<b:row>
+     				<b:column col-xs="12" col-md="8">
+	  					<h5>Entre com os dados abaixo para realizar o login.</h5>
+  					</b:column>
+     			</b:row>
+     			
+     			<h:panelGroup rendered="#{param.erro != null}">
+					<p>Dados inválidos.</p>
+				</h:panelGroup>
+     			
+     			<b:row>
+     				<b:column col-xs="12" col-md="8">
+						<b:inputText placeholder="Username" required="true"
+							label="Usuário:" colMd="10" labelColMd="2" name="username"
+							id="username">
+							<f:facet name="prepend">
+								<b:icon name="user" />
+							</f:facet>
+						</b:inputText>
+					</b:column>
+     			</b:row>
+     			
+     			<b:row>
+     				<b:column col-xs="12" col-md="8">
+						<b:inputSecret placeholder="Password" required="true" label="Senha: " colMd="10"
+							labelColMd="2" id="password" name="password">
+							<f:facet name="prepend">
+								<b:iconAwesome name="key" />
+							</f:facet>
+						</b:inputSecret>
+					</b:column>
+     			</b:row>
+     			
+  				<b:row>
+     				<b:column>
+						<h:commandLink action="cadastrar" value="Não possuo cadastro. " />
+						<b:commandButton value="Enviar" action="login" />
+					</b:column>
+					
+     			</b:row>				
+  				
+     		</b:panel>
+    		 	
+		</h:form>   
+	</b:container>
+	
+	</body>
+</html>

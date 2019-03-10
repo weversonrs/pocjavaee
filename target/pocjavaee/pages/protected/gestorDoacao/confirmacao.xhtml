@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:b="http://bootsfaces.net/ui"
+    xmlns:p="http://primefaces.org/ui"> 
+	<h:head>
+        <title>Sistema de Doação</title>
+        <meta name="weverson" content="The Author"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        
+        <link rel="stylesheet" href="resources/css/site.css"/>
+    </h:head>
+    <!-- Add 50px padding top to the body for the navbar -->
+    <h:body style="padding-top: 50px; padding-bottom: 20px;">
+        <b:navBar brand="SIDS" brandHref="#{request.contextPath}" fixed="top">
+            <b:navbarLinks>
+                <b:dropMenu value="Menu">
+                	<b:navLink value="Agendar doação de sangue" href="#" ></b:navLink>
+                	<b:navLink value="Visualizar resultado de exames" href="#"></b:navLink>
+                    <b:navLink value="Analisar atendimento" href="#"></b:navLink>
+                    <b:navLink></b:navLink>
+                    <b:navLink header="Dados cadastrais"></b:navLink>
+                    <b:navLink value="Atualizar" href="#"></b:navLink>
+                </b:dropMenu>
+            </b:navbarLinks>
+            
+        </b:navBar>
+        
+        <p/>
+        
+        <b:container>
+			<b:row>
+				<h:form>
+					<b:column span="12">
+						<h3>Análise realizada com sucesso!</h3>
+					</b:column>
+					<b:panel>
+	
+						<b:row>
+							<b:column medium-screen="4">
+	      						<p:outputLabel value="Data da Solicitação: "/>
+	    					</b:column>
+	    					
+	    					<b:column medium-screen="4">
+	      						<h:outputText value="#{analiseSangueBean.analise.solicitacao.dataSolicitacao}" >
+	      							<f:convertDateTime for="dataNasc" pattern="dd/MM/yyyy"
+						timeZone="America/Sao_Paulo"></f:convertDateTime>
+	      						</h:outputText>
+	    					</b:column>
+    					</b:row>
+    					
+    					<b:row>
+    						<br/>
+    					</b:row>
+    					
+    					<b:row>
+							<b:column medium-screen="4">
+	      						<p:outputLabel value="Unidade Hospitalar Solicitante: "/>
+	    					</b:column>
+	    					
+	    					<b:column medium-screen="4">
+	      						<h:outputText value="#{analiseSangueBean.analise.solicitacao.unidadeHospitalar.nome}" />
+	      					</b:column>
+    					</b:row>
+    					
+    					<b:row>
+    						<br/>
+    					</b:row>
+    					
+    					<b:row>
+							<b:column medium-screen="4">
+	      						<p:outputLabel value="Paciente Receptor: "/>
+	    					</b:column>
+	    					
+	    					<b:column medium-screen="4">
+	      						<h:outputText value="#{analiseSangueBean.analise.solicitacao.pacienteBeneficiario}" />
+	      					</b:column>
+    					</b:row>
+    					
+    					<b:row>
+    						<br/>
+    					</b:row>
+    					
+    					<b:row>
+							<b:column medium-screen="4">
+	      						<p:outputLabel value="Quantidade de Bolsas de Sangue: "/>
+	    					</b:column>
+	    					
+	    					<b:column medium-screen="4">
+	      						<h:outputText value="#{analiseSangueBean.analise.solicitacao.quantidadeBolsa}" />
+	      					</b:column>
+    					</b:row>  
+    					
+    					<b:row>
+    						<br/>
+    					</b:row>
+    					
+    					<b:row>
+							<b:column medium-screen="4">
+	      						<p:outputLabel value="Tipo Sanguíneo: "/>
+	    					</b:column>
+	    					
+	    					<b:column medium-screen="4">
+	      						<h:outputText value="#{analiseSangueBean.analise.solicitacao.tipoSanguineo}" />
+	      					</b:column>
+    					</b:row>
+    					
+    					<b:row>
+    						<br/>
+    					</b:row>
+    					
+    					<b:row>
+							<b:column medium-screen="4">
+	      						<p:outputLabel value="Justificativa: "/>
+	    					</b:column>
+	    					
+	    					<b:column medium-screen="4">
+	      						<h:outputText value="#{analiseSangueBean.justificativa}" />
+	      					</b:column>
+    					</b:row>
+    					
+    					<b:row>
+    						<br/>
+    					</b:row>
+    					
+    					<b:row>
+							<b:column medium-screen="4">
+	      						<p:outputLabel value="Decisão: "/>
+	    					</b:column>
+	    					
+	    					<b:column medium-screen="4">
+	      						<h:outputText value="#{analiseSangueBean.decisaoStr}" />
+	      					</b:column>
+    					</b:row>	   		
+    					
+    					<b:row>
+    						<br/>
+    					</b:row>			
+						
+						<b:column col-xs="4" col-md="2">								
+							<b:commandButton value="Voltar" action="#{analiseSangueBean.voltar}"/>
+						</b:column>	
+	
+	
+					</b:panel>
+	
+				</h:form>
+			</b:row>
+		<hr/>
+     	<footer>
+        	<h6>© SIDS - Sistema Integrado de Doação de Sangue</h6>
+        </footer>
+        </b:container>
+
+    </h:body>  
+</html>

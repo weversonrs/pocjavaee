@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:b="http://bootsfaces.net/ui"> 
+	<h:head>
+        <title>Sistema de Doação</title>
+        <meta name="weverson" content="The Author"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        
+        <link rel="stylesheet" href="resources/css/site.css"/>
+    </h:head>
+    <!-- Add 50px padding top to the body for the navbar -->
+    <h:body style="padding-top: 50px; padding-bottom: 20px;">
+        <b:navBar brand="SIDS" brandHref="#" fixed="top" >
+            <b:navbarLinks >
+                <b:dropMenu value="Menu">
+                    <b:navLink value="Action" href="#"></b:navLink>
+                    <b:navLink value="Another action" href="#"></b:navLink>
+                    <b:navLink value="Something else here" href="#"></b:navLink>
+                    <b:navLink></b:navLink>
+                    <b:navLink header="Nav header"></b:navLink>
+                    <b:navLink value="Separated link" href="#"></b:navLink>
+                    <b:navLink value="One more separated link" href="#"></b:navLink>
+                </b:dropMenu>
+            </b:navbarLinks>
+            <h:form styleClass="navbar-form navbar-right">
+                <b:commandButton action="login" value="Login" look="success" icon="chevron-right" iconAlign="right"/>
+            </h:form>
+            
+        </b:navBar>
+        <b:jumbotron class="container jumbotron">
+            <b:container>
+            	<b:row>
+            		<b:column col-xs="12" col-md="8"><h1>Importância da doação</h1></b:column>
+                </b:row>
+                <b:row>
+                	<b:column col-xs="12" col-md="8">
+		                <p>A falta do estoque de sangue em um hospital pode levar ao cancelamento de cirurgias, transplantes e outros 
+		                	procedimentos que necessitam de sangue ou seus derivados.
+		                </p>
+	                </b:column>
+                </b:row>
+                <p>
+                	<h:form>
+                		<h:commandButton class="btn btn-lg btn-info" action="/login.xhtml" value="Agende sua doação" />
+ 					</h:form>               
+                </p>
+            </b:container>
+
+        </b:jumbotron>
+        <b:container>
+            <b:row>
+                <b:column col-md="4">
+                    <h2>Requisitos</h2>
+                    <p>Podem doar sangue pessoas entre 16 e 69 anos e que estejam pesando mais de 50kg. Além disso, é preciso apresentar documento oficial 
+                    com foto e menores de 18 anos só podem doar com consentimento formal dos responsáveis (acesse o formulário). </p>
+                    <p><b:button outcome="" value="Detalhes »"/></p>
+                </b:column>
+                <b:column col-md="4">
+                    <h2>Números</h2>
+                    <p>Uma pessoa adulta possui em média cinco litros de sangue e em uma doação são coletados no máximo 450 ml. Isso é menos de 10% 
+                    de todo seu sangue. O doador passará por uma avaliação prévia com o objetivo de detectar alguns impedimentos, como doenças.  </p>
+                    <p><b:button outcome="" value="Detalhes »"/></p>
+                </b:column>
+                <b:column col-md="4">
+                    <h2>Importância</h2>
+                    <p>A doação de sangue é 100% voluntária e não causa prejuízos ao seu organismo. Uma única doação é possível salvar até quatro vidas, 
+                    uma vez que o material é separado em diferentes hemocomponentes, que podem ser utilizados em diversas situações clínicas. </p>
+                    <p><b:button outcome="" value="Detalhes »"/></p>
+                </b:column>
+            </b:row>
+            <hr/>
+            <footer>
+            	<h6>© SIDS - Sistema Integrado de Doação de Sangue</h6>
+            </footer>
+        </b:container>
+
+    </h:body>  
+</html>

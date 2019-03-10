@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:b="http://bootsfaces.net/ui"> 
+	<h:head>
+        <title>Sistema de Doação</title>
+        <meta name="weverson" content="The Author"></meta>
+    </h:head>
+    <!-- Add 50px padding top to the body for the navbar -->
+    <h:body style="padding-top: 50px; padding-bottom: 20px;">
+    	
+    	<h:form>
+    	
+        <b:navBar brand="SIDS" brandHref="#{request.contextPath}" fixed="top">
+            <b:navbarLinks>
+                <b:dropMenu value="Menu" rendered="${requestScope.role == 'user'}">
+                	<b:navLink value="Agendar doação de sangue" href="#{request.contextPath}/pages/protected/doador/solicitarDoacao.xhtml"></b:navLink>
+                	<b:navLink value="Visualizar resultado de exames" href="#"></b:navLink>
+                    <b:navLink value="Analisar atendimento" href="#"></b:navLink>
+                    <b:navLink></b:navLink>
+                    <b:navLink header="Dados cadastrais"></b:navLink>
+                    <b:navLink value="Atualizar" href="#"></b:navLink>
+                </b:dropMenu>
+                <b:dropMenu value="Menu" rendered="${requestScope.role == 'unidade'}">
+                	<b:navLink value="Solicitar bolsa de sangue" href="#{request.contextPath}/pages/protected/unidadeHospitalar/solicitacao.xhtml"></b:navLink>
+                	<b:navLink value="Histórico" href="lista.xhtml"></b:navLink>
+                	<b:navLink></b:navLink>
+                    <b:navLink header="Dados cadastrais"></b:navLink>
+                    <b:navLink value="Atualizar" href="#"></b:navLink>
+                </b:dropMenu>
+                <b:dropMenu value="Menu" rendered="${requestScope.role == 'gestor'}">
+                	<b:navLink value="Analisar Solicitação de bolsa de sangue" href="#{request.contextPath}/pages/protected/gestorDoacao/solicitacoes.xhtml"></b:navLink>
+                	<b:navLink></b:navLink>
+                    <b:navLink header="Dados cadastrais"></b:navLink>
+                    <b:navLink value="Atualizar" href="#"></b:navLink>
+                </b:dropMenu>
+            </b:navbarLinks>
+            
+        </b:navBar>
+       
+       </h:form>
+        <p/>
+        <b:container>
+			<b:jumbotron class="container jumbotron">
+            <b:container>
+            	<b:row>
+            		<b:column col-xs="12" col-md="8"><h1>Bem vindo!</h1></b:column>
+                </b:row>
+                <b:row>
+                	<b:column col-xs="12" col-md="8">
+		                <p>Doação de Sangue
+		                </p>
+	                </b:column>
+                </b:row>
+                
+            </b:container>
+
+        </b:jumbotron>
+     	<footer>
+        	<h6>© SIDS - Sistema Integrado de Doação de Sangue</h6>
+        </footer>
+        </b:container>
+
+    </h:body>  
+</html>
